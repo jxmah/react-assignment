@@ -10,7 +10,6 @@ import next from "next";
 export default function Home() {
   const [movies, setMovies] = useState([]); // state to hold movies
   const [nextId, setNextId] = useState(1); // state to hold next id, starts at 1
-  const [sortOrder, setSortOrder] = useState('none'); // state to hold sort order, starts at none
 
   const addMovie = (newMovie) => {
     const movieWithId = {
@@ -29,13 +28,11 @@ export default function Home() {
   const sortAlpha = () => {
     const sortedMovies = [...movies].sort((a, b) => a.title.localeCompare(b.title));
     setMovies(sortedMovies);
-    setSortOrder('alpha');
   };
 
   const sortRating = () => {
     const sortedMovies = [...movies].sort((a, b) => b.rating - a.rating);
     setMovies(sortedMovies);
-    setSortOrder('rating');
   };
 
   return (
@@ -56,7 +53,7 @@ export default function Home() {
         ))}
       </Movies>
       <SortButton
-        onSortByAlpha={sortAlpha}
+        onSortAlpha={sortAlpha}
         onSortRating={sortRating}
       />
     </div>

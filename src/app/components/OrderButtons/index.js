@@ -1,8 +1,8 @@
-const SortButton = ({ sortAlpha, sortRating }) => {
+const SortButton = ({ onSortAlpha, onSortRating }) => {
     return (
         <div>
-            <button onClick={sortAlpha} className="btn btn-primary mt-3 me-3">Alfabetisk ordning</button>
-            <button onClick={sortRating} className="btn btn-primary mt-3">Betygsordning</button>
+            <button onClick={onSortAlpha} className="btn btn-primary mt-3 me-3">Alfabetisk ordning</button>
+            <button onClick={onSortRating} className="btn btn-primary mt-3">Betygsordning</button>
         </div>
     );
 };
