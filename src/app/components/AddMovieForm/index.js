@@ -1,22 +1,22 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // import bootstrap CSS for styling
 
 const AddMovieForm = ({ addMovie }) => {
-    const [title, setTitle] = useState("");
-    const [rating, setRating] = useState("");
+    const [title, setTitle] = useState(""); // state to hold the title of the movie
+    const [rating, setRating] = useState(""); // state to hold the rating of the movie
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (!title || !rating) {
-            alert("Du måste fylla i alla fält!");
+            alert("Du måste fylla i alla fält!"); // alert the user if any field is empty
             return;
         }
 
-        addMovie({ title, rating });
+        addMovie({ title, rating }); // call the addMovie function passed as a prop with the new movie data
 
-        setTitle("");
-        setRating("");
+        setTitle(""); // reset the title state
+        setRating(""); // reset the rating state
     };
 
     return (

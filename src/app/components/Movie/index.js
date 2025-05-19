@@ -2,9 +2,9 @@ import styles from "./styles.module.css";
 
 const Movie = ({ id, title, rating, onDelete }) => {
 
-    const star = (rating) => {
-        const stars = [];
-        for (let i = 0; i < rating; i++) {
+    const star = (rating) => { // function to create star images based on rating
+        const stars = []; // create an array to hold star images
+        for (let i = 0; i < rating; i++) { // loop through the rating
             stars.push(
                 <img key={i} src="/images/star.png" alt="star" className={styles.deleteMovieIcon} />
             );
