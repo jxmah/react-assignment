@@ -6,7 +6,7 @@ const Movie = ({ id, title, rating, onDelete }) => {
         const stars = [];
         for (let i = 0; i < rating; i++) {
             stars.push(
-                <img key={i} src="/images/star.png" alt="star" width="20" height="20" />
+                <img key={i} src="/images/star.png" alt="star" className={styles.deleteMovieIcon} />
             );
         }
         return stars;
@@ -16,10 +16,10 @@ const Movie = ({ id, title, rating, onDelete }) => {
         <ul className={styles.movies}>
             <li className={styles.movieItem}>
                 {title}
-                {star(rating)}
                 <button onClick={() => onDelete(id)}>
-                    <img src="/images/delete.png" alt="delete" width="20" className={styles.deleteMovieIcon} />
+                    <img src="/images/delete.png" alt="delete" className={styles.deleteMovieIcon} />
                 </button>
+                {star(rating)}
             </li>
         </ul>
     );

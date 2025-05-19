@@ -21,11 +21,11 @@ const AddMovieForm = ({ addMovie }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <fieldset>Lägg till en film</fieldset>
+            <fieldset className="h3">Lägg till en film</fieldset>
 
             <label htmlFor="title">Title:</label>
             <input
-                className="form-control"
+                className="form-control mb-3"
                 type="text"
                 id="title"
                 value={title}
@@ -33,7 +33,7 @@ const AddMovieForm = ({ addMovie }) => {
             />
 
             <label htmlFor="rating">Rating:</label>
-            <select className="form-control" id="rating" value={rating} onChange={(e) => setRating(e.target.value)}>
+            <select className="form-control mb-3" id="rating" value={rating} onChange={(e) => setRating(e.target.value)}>
                 <option value="" disabled>Välj betyg här...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -42,7 +42,7 @@ const AddMovieForm = ({ addMovie }) => {
                 <option value="5">5</option>
             </select>
 
-            <input type="submit" value="Spara film" className="btn btn-success mt-3" />
+            <input type="submit" value="Spara film" className="btn btn-success mb-3" />
         </form>
     );
 };
